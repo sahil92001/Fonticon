@@ -2,19 +2,24 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{variable}}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{variable1}}">
   <style>
-    body {
-      font-family: '{{variable}}';
+    .txt1 {
+      font-family: '{{variable1}}';
       font-size: 40px;
+    }
+
+    .txt2 {
+      font-family: '{{variable2}}';
+      font-size: 25px;
     }
   </style>
 </head>
 
 <body>
 
-  <div>Making the Web Beautiful!<br>
-    Font is {{variable}}</div>
+  <div class="txt1">Making the Web Beautiful! Font is {{variable1}}</div>
+  <div class="txt2">Making the Web Beautiful! Font is {{variable2}}</div>
 
   <form action="" method="GET">
     <input type="submit" value="Click">
