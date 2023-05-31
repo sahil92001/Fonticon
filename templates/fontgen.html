@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{variable}}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <style>
-    
-
-
-      .h4-Custom{
-        font-family: '{{variable}}';
-        font-size: 1.8rem;
-        font-weight: normal;
-        text-align: left;
-      }
+    .h4-Custom {
+      font-family: '{{variable}}';
+      font-size: 1.8rem;
+      font-weight: normal;
+      text-align: left;
+      max-width: 800;
+      max-height: 430;
+      min-width: 800;
+      min-height: 430;
+      resize: none;
+    }
   </style>
 </head>
 
@@ -49,7 +52,7 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-2">
-         <!--Empty-->
+        <!--Empty-->
       </div>
 
 
@@ -57,27 +60,42 @@
 
       <div class="col-8">
 
-         <!--Code for the Font Genrator-->
-  <div class="container">
+        <!--Code for the Font Genrator-->
+        <div class="container">
 
-    <div class="card">
-      <div class="card-header">
-      <h1 class="display-6">{{variable}} </h1>
-      </div>
-      <div class="card-body">
-        <h1 class="h4-Custom">
-          "Creativity knows no bounds, transcending barriers and embracing innovation. With each stroke of inspiration, a world of possibilities unfolds. Ideas bloom, melodies resonate, and words dance on the pages of creation. In this realm of boundless expression, originality flourishes, giving birth to timeless works that captivate hearts and minds. Let your imagination soar, for the beauty of art belongs to us all."
-        </h1>
-      </div>
-      
-      </div>
+          <div class="card">
+            <div class="card-header">
+              <h1 class="display-6">{{variable}} </h1>
+            </div>
+            <div class="card-body">
+              <textarea class="h4-Custom" id="maintext" rows="10" cols="60">
+                "Creativity knows no bounds, transcending barriers and embracing innovation. With each stroke of
+                inspiration, a world of possibilities unfolds. Ideas bloom, melodies resonate, and words dance on the
+                pages of creation. In this realm of boundless expression, originality flourishes, giving birth to
+                timeless works that captivate hearts and minds. Let your imagination soar, for the beauty of art belongs
+                to us all."
+              </textarea>
 
-  <!-- Spacing -->
+            </div>
+            <button onclick="copyText()">Copy</button>
 
-    </br></br>
+          </div>
+          <script>
+            function copyText() {
+              var Text = document.getElementById("maintext");
+              Text.select();
+              navigator.clipboard.writeText(Text.value);
+              document.getElementById("clipboard").innerHTML = Text.value;
+              alert("Copied!");
+            }
+          </script>
+
+          <!-- Spacing -->
+
+          </br></br>
 
     <form action="" method="GET">
-      <button class="btn btn-primary btn-lg" type="submit">Generate Font</button>
+      <button class="btn btn-primary btn-lg" type="submit"> Generate Font </button>
     </form>
   </div>
 
@@ -92,8 +110,8 @@
   </div>
 
 
- 
-  
+
+
 
 </body>
 
