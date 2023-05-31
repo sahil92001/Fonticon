@@ -17,6 +17,11 @@
       min-height: 430;
       resize: none;
     }
+
+    .display-6 {
+      resize: none;
+
+    }
   </style>
 </head>
 
@@ -65,7 +70,8 @@
 
           <div class="card">
             <div class="card-header">
-              <h1 class="display-6">{{variable}} </h1>
+              <textarea class="display-6" id="fontname">{{variable}} </textarea>
+              <button onclick="copyname()">Copy</button>
             </div>
             <div class="card-body">
               <textarea class="h4-Custom" id="maintext">
@@ -83,6 +89,15 @@
           <script>
             function copyText() {
               var Text = document.getElementById("maintext");
+              Text.select();
+              navigator.clipboard.writeText(Text.value);
+              document.getElementById("clipboard").innerHTML = Text.value;
+              alert("Copied!");
+            }
+          </script>
+          <script>
+            function copyname() {
+              var Text = document.getElementById("fontname");
               Text.select();
               navigator.clipboard.writeText(Text.value);
               document.getElementById("clipboard").innerHTML = Text.value;
