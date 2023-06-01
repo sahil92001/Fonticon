@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path("fontgen",views.fontgen,name="fontgen"),
-    path("quiz",views.quiz,name="quiz")
+    path("newcard",views.cardgen,name="newcard")
 ]
