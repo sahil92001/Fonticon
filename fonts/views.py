@@ -31,3 +31,6 @@ def cardgen(request):
     context = font_var()
     return render(request,"fontgen/cardbody.html",context)
 
+def icons(request):
+    return render(request,"icons/icons.html")
+
