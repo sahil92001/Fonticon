@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path("fontgen",views.fontgen,name="fontgen")
+    path("",views.fontgen,name="fontgen"),
+    path("newcard",views.cardgen,name="newcard"),
 ]

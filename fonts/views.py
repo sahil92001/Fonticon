@@ -3,7 +3,11 @@ import random
 import requests
 
 
+<<<<<<< HEAD
 def fontname():
+=======
+def font_var():
+>>>>>>> 13485d91ca3f8d0d51f2cf46ddfb4265968e0c67
     url="https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyDW2gZ2GC-uIaRHrxu0zVK1tscYGMRaZ1E"
     response = requests.get(url)
 
@@ -13,8 +17,10 @@ def fontname():
         random_font = random.choice(fonts)
 
         font= random_font["family"]
+        download=random_font['files']['regular']
     else:
         font="Failed to get font"
+<<<<<<< HEAD
     return font
 
 def fontgen(request):
@@ -32,3 +38,23 @@ def fontgen(request):
         }
 
     return render(request,"fontgen.html",context)
+=======
+    context = {
+        "variable":font,
+        "download":download
+
+    }
+    return context
+
+def fontgen(request):
+    context = font_var()
+    return render(request,"fontgen/fontgen.html",context)
+
+def cardgen(request):
+    context = font_var()
+    return render(request,"fontgen/cardbody.html",context)
+
+def icons(request):
+    return render(request,"icons/icons.html")
+
+>>>>>>> 13485d91ca3f8d0d51f2cf46ddfb4265968e0c67
